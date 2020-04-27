@@ -32,7 +32,7 @@ Backlog:
 ## 1st User Story
 
 ```
-As a user
+As a programmer,
 So that I can run a test,
-I should be able to open test.html in browser
+I should be able to open test.html in browser and see a pass or fail message
 ````
