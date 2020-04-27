@@ -26,8 +26,12 @@ document.write(
   '<br>',
   '<br>',
   'test3 - shows 3rd item in list: ',
-  assessEqual(list[2], "Note number twoooo")
-  
+  assessEqual(list[2], "Note number twoooo"),
+  '<br>',
+  '<br>',
+  'reduces Water melon is the best framework characters down to 20 chars: ',
+  assessEqual(list[3], "Water melon is the b"),
+
     )
 
     

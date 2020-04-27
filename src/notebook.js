@@ -2,11 +2,9 @@
 
 class Notebook {
   constructor() {
-    this.notes = ["Hi", "hello", "Note number twoooo"]
+    this.notes = ["Hi", "hello", "Note number twoooo", "Water melon is the best framework"]
   }
   list(){
-    return this.notes
+    return this.notes.map( ( note ) => { return note.slice(0, 20); } )
   }
 }
-let char = "Note number twoooo"
-console.log(char.length)
