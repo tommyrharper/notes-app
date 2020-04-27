@@ -36,3 +36,11 @@ As a programmer,
 So that I can run a test,
 I should be able to open test.html in browser and see a pass or fail message
 ````
+
+## 2nd User Story
+
+```
+As a programmer,
+So that I know if a function gives the desired output,
+I want to be able to asses whether something is equal to a given value.
+```
