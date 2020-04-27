@@ -6,6 +6,7 @@ function assessEqual(recieved, expected) {
   return 'test has failed'
 }
 
+var notebook = new Notebook()
 
 document.write(
   'test1 - 4 is equal to 4: ',
@@ -13,6 +14,12 @@ document.write(
   '<br>',
   '<br>',
   'test2 - 4 is not equal to 3: ',
-  assessEqual(4,3)
+  assessEqual(4,3),
+  '<br>',
+  '<br>',
+  'note lists hi: ',
+  assessEqual(notebook.list(), "Hi")
 
     )
+
+    
