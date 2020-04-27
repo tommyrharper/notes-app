@@ -5,3 +5,9 @@ function assessEqual(recieved, expected) {
   }
   return false
 }
+
+
+document.write(
+  'test1 - 4 is equal to 4: ',
+  assessEqual(4,4)
+    )
