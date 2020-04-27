@@ -7,7 +7,7 @@ function assessEqual(recieved, expected) {
 }
 
 var notebook = new Notebook()
-
+var list = notebook.list()
 document.write(
   'test1 - 4 is equal to 4: ',
   assessEqual(4,4),
@@ -18,7 +18,13 @@ document.write(
   '<br>',
   '<br>',
   'note lists hi: ',
-  assessEqual(notebook.list(), "Hi")
+  assessEqual(list[0], "Hi"),
+  '<br>',
+  '<br>',
+  'note lists hello: ',
+  assessEqual(list[1], "hello")
+
+
 
     )
 
