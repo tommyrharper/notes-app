@@ -48,9 +48,11 @@ I want to be able to asses whether something is equal to a given value.
 
 Input | Output
 ------|------
-assessEqual(4,4) | true
-assessEquall(5,4) | false
-assessEqual(1,2) | false
-assessEqual('a','a') | true
-assessEqual('2', 2) | false
+assessEqual(4,4) | true x
+assessEquall(5,4) | false x
+assessEqual(1,2) | false x
+assessEqual('a','a') | true x
+assessEqual('2', 2) | false x
+assessEqual(array[0], 1) | true x
+assessEqual(2+2,1+3) | true x
 
