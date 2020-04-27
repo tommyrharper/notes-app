@@ -44,3 +44,13 @@ As a programmer,
 So that I know if a function gives the desired output,
 I want to be able to asses whether something is equal to a given value.
 ```
+
+
+Input | Output
+------|------
+assessEqual(4,4) | true
+assessEquall(5,4) | false
+assessEqual(1,2) | false
+assessEqual('a','a') | true
+assessEqual('2', 2) | false
+
