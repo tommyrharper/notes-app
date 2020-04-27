@@ -16,7 +16,7 @@ We are not alowed to use libraries for this project, so we will have to build ou
 ------------|---------
 assessEqual(4,4) |  true
 
-- It tells the user is a test passes or fails
+- It tells the user if a test passes or fails
 
 
 ## Three more features:
@@ -56,3 +56,10 @@ assessEqual('2', 2) | false x
 assessEqual(array[0], 1) | true x
 assessEqual(2+2,1+3) | true x
 
+## 3rd User Story
+
+```
+As a programmer,
+So that I know if my passes,
+I want to be able to see if my test passed or failed.
+```
