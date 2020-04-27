@@ -22,10 +22,12 @@ document.write(
   '<br>',
   '<br>',
   'note lists hello: ',
-  assessEqual(list[1], "hello")
-
-
-
+  assessEqual(list[1], "hello"),
+  '<br>',
+  '<br>',
+  'test3 - shows 3rd item in list: ',
+  assessEqual(list[2], "Note number twoooo")
+  
     )
 
     
