@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="./src/notebook.js"></script>
+  <title>Notebook</title>
+</head>
+<body>
+  <h1>Notebook</h1>
+  <script>
+    let notebook = new Notebook();
+    let list = notebook.list()
+      list.forEach( function(note) {
+        document.write(note + '<br>')
+      })
+  </script>
+</body>
+</html>

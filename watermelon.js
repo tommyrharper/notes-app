@@ -33,5 +33,3 @@ document.write(
   assessEqual(list[3], "Water melon is the b"),
 
     )
-
-    
