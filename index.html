@@ -10,17 +10,10 @@
 </head>
 <body>
   <h1>Notebook</h1>
-  <script>
-    let notebook = new Notebook();
-    let list = notebook.list()
-      list.forEach( function(note) {
-        document.write(note + '<br>')
-      })
-
-  </script>
+  <div id="notes-list"></div>
   <form >
     <textarea id="add-note" type="text" name="add-note" rows="30" cols="10" ></textarea><br>
-    <input id="submit-note" onclick="getData()" type="submit" value="Make note">
+    <input id="submit-note" onclick="addNote(event)" type="submit" value="Make note">
 </form>
 </body>
 <script src="interface.js"></script>
