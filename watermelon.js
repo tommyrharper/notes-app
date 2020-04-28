@@ -31,5 +31,10 @@ document.write(
   '<br>',
   'reduces Water melon is the best framework characters down to 20 chars: ',
   assessEqual(list[3], "Water melon is the b"),
-
+  '<br>',
+  '<br>',
+  'adds a new note - new note:',
+  notebook.addNote("new note"),
+  assessEqual(notebook.list()[4], "new note"),
     )
+

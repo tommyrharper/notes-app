@@ -7,4 +7,7 @@ class Notebook {
   list(){
     return this.notes.map( ( note ) => { return note.slice(0, 20); } )
   }
+  addNote(note){
+    this.notes.push(note)
+  }
 }
