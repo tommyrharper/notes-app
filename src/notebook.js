@@ -10,4 +10,10 @@ class Notebook {
   addNote(note){
     this.notes.push(note)
   }
+  displayNote(index) {
+    console.log('in displayNote')
+    console.log(index)
+    console.log(this.notes)
+    return this.notes[index]
+  }
 }
