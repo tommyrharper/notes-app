@@ -28,5 +28,5 @@ it('note lists hi', function(){
 //test 2
 
 it('shows 3rd item in list', function(){
-  expect(list[2], "Note number twoooo")
+  expect(list[2]).toEqual("Note number twoooo")
 })
