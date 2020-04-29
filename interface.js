@@ -6,6 +6,7 @@ document.getElementById("submit-note").addEventListener("click", function() {
 })
 */
 let notebook = new Notebook();
+document.getElementById("individual-note-view").style.display = "none";
 populateNoteList();
 window.addEventListener("hashchange", showEntireNote);
 
@@ -33,6 +34,7 @@ function showEntireNote() {
 }
 
 function onClickBack() {
+  document.getElementById("individual-note-view").style.display = "none";
   document.getElementById("notes-list-view").style.display = "block";
 }
 
@@ -49,8 +51,9 @@ function findIndexOfNoteClicked(noteAddress) {
 }
 
 function displayNoteView(index) {
-  let element = document.getElementById("individual-note-view");
-  element.innerHTML += notebook.displayNote(index);
+  let element = document.getElementById("note-content");
+  element.innerHTML = notebook.displayNote(index);
+  document.getElementById("individual-note-view").style.display = "block";
 }
 
 function hideNotesListView() {

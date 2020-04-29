@@ -12,14 +12,15 @@
   <h1>Notebook</h1>
   <div id="notes-list-view">
     <div id="notes-list"></div>
-    <form>
+    <form enctype="text/plain">
         <textarea id="add-note" type="text" name="add-note" rows="30" cols="10" ></textarea><br>
         <input id="submit-note" onclick="addNote(event)" type="submit" value="Make note">
     </form>
   </div>
-<div id="individual-note-view">
-  <button id="back" onclick="onClickBack">Back</button>
-</div>
+  <div id="individual-note-view">
+    <div id="note-content"></div>
+    <button id="back" onclick="onClickBack()">Back</button>
+  </div>
 </body>
 <script src="interface.js"></script>
 </html>
