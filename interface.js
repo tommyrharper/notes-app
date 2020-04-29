@@ -20,6 +20,6 @@ function populateNoteList() {
   let notesList = document.getElementById("notes-list");
   notesList.innerHTML = "";
   notebook.list().forEach( ( note ) => {
-    notesList.innerHTML += note + "<br>";
+    notesList.innerHTML += "<a href='note'>" + note + "</a>" + "<br>";
   });
 }
