@@ -7,6 +7,7 @@ document.getElementById("submit-note").addEventListener("click", function() {
 */
 let notebook = new Notebook();
 populateNoteList();
+window.addEventListener("hashchange", showEntireNote);
 
 function addNote(event) {
   event.preventDefault();
@@ -20,6 +21,38 @@ function populateNoteList() {
   let notesList = document.getElementById("notes-list");
   notesList.innerHTML = "";
   notebook.list().forEach( ( note ) => {
-    notesList.innerHTML += note + "<br>";
+    notesList.innerHTML += `<a href='#${note}' id='${note}'>${note}<br></a>`;
   });
+}
+
+function showEntireNote() {
+  let noteAddress = findNoteAddress();
+  let index = findIndexOfNoteClicked(noteAddress);
+  displayNoteView(index);
+  hideNotesListView();
+}
+
+function onClickBack() {
+  document.getElementById("notes-list-view").style.display = "block";
+}
+
+function findNoteAddress() {
+  let locationHash = window.location.hash;
+  return noteAddress = locationHash.split('#')[1];
+}
+
+function findIndexOfNoteClicked(noteAddress) {
+  let parent = document.getElementById("notes-list");
+  let id = noteAddress.replace(/%20/g, " ")
+  let child = document.getElementById(id);
+  return Array.prototype.indexOf.call(parent.children, child);
+}
+
+function displayNoteView(index) {
+  let element = document.getElementById("individual-note-view");
+  element.innerHTML += notebook.displayNote(index);
+}
+
+function hideNotesListView() {
+  document.getElementById("notes-list-view").style.display = "none";
 }

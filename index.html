@@ -10,11 +10,16 @@
 </head>
 <body>
   <h1>Notebook</h1>
-  <div id="notes-list"></div>
-  <form >
-    <textarea id="add-note" type="text" name="add-note" rows="30" cols="10" ></textarea><br>
-    <input id="submit-note" onclick="addNote(event)" type="submit" value="Make note">
-</form>
+  <div id="notes-list-view">
+    <div id="notes-list"></div>
+    <form>
+        <textarea id="add-note" type="text" name="add-note" rows="30" cols="10" ></textarea><br>
+        <input id="submit-note" onclick="addNote(event)" type="submit" value="Make note">
+    </form>
+  </div>
+<div id="individual-note-view">
+  <button id="back" onclick="onClickBack">Back</button>
+</div>
 </body>
 <script src="interface.js"></script>
 </html>

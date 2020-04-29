@@ -36,6 +36,10 @@ document.write(
   'adds a new note - new note:',
   notebook.addNote("new note"),
   assessEqual(notebook.list()[4], "new note"),
+  '<br>',
+  '<br>',
+  'displays a whole note',
+  assessEqual(notebook.displayNote(3), "Water melon is the best framework"),
     )
 
 
