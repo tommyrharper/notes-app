@@ -1,9 +1,9 @@
 
 
 // toEqual and to expe
-function expect(testcase) {
+function expect(testCase) {
 	var toEqual = function(comparison) {
-		if (testcase === comparison) {
+		if (testCase === comparison) {
 			console.log("Pass")
 		} else {
 			console.log("Fail")
