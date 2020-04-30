@@ -2,9 +2,9 @@
 function expect(testCase) {
 	var toEqual = function(comparison) {
 		if (testCase === comparison) {
-			console.log("Pass")
+			testResult("Pass")
 		} else {
-			console.log("Fail")
+			testResult("Fail")
 		}
 	}
 	return {
@@ -13,6 +13,14 @@ function expect(testCase) {
 }
 
 function it(name, test) {
-  console.log(name)
+  testResult(name)
   test()
+}
+
+
+
+
+function testResult(result) {
+  var testContainer = document.getElementById("tests")
+  testContainer.innerHTML +=  result 
 }
