@@ -2,11 +2,12 @@ var notebook = new Notebook()
 var list = notebook.list()
 
 // test 1 
-it('note lists hi', function(){
-  expect(list[0]).toEqual('Hi')
+it('6 + 4 equals 10', function(){
+  expect(6+4).toEqual(10)
 })
 
 //test 2
-it('shows 3rd item in list', function(){
-  expect(list[2]).toEqual("Note number twoooo")
+it('a matches a', function(){
+  expect("a").toEqual("a")
 })
+
