@@ -14,3 +14,5 @@ class Notebook {
     return this.notes[index]
   }
 }
+
+module.exports = Notebook

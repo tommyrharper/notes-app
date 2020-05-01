@@ -1,35 +1,63 @@
-//user has entered content in textarea
-//send new note to note list on click submit
-/*
-document.getElementById("submit-note").addEventListener("click", function() {
-  document.getElementById("submit-note").innerHTML
-})
-*/
-let notebook = new Notebook();
 document.getElementById("individual-note-view").style.display = "none";
 populateNoteList();
 window.addEventListener("hashchange", showEntireNote);
+// gets the list from the server
+getRequest()
+
+function getRequest() {
+  var request = new XMLHttpRequest();
+  request.open('GET', 'http://localhost:1234/notes', true);
+  request.onload = function() {
+    if (this.status >= 200 && this.status < 400) {
+      // Success!
+      var resp = this.response;
+      var notes = JSON.parse(resp)
+      populateTestList(notes)
+    } else {
+      // We reached our target server, but it returned an error
+    }
+  };
+  request.onerror = function() {
+    // There was a connection error of some sort
+  };
+  request.send();
+}
+
+function populateTestList(notes) {
+  let testList = document.getElementById("testing");
+  testList.innerHTML = ""
+  notes.shortList.forEach((note) => {
+  testList.innerHTML += `<a href='#${note}' id='${note}'>${note}<br></a>`;
+  })
+}
+
+function postRequest(sendData) {
+  var request = new XMLHttpRequest();
+  request.open('POST', 'http://localhost:1234/notes', true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  request.send(sendData);
+
+}
 
 function addNote(event) {
   event.preventDefault();
   const element = document.getElementById("add-note");
-  notebook.addNote(element.value);
+  // notebook.addNote(element.value);
   const sendData = element.value
   element.value = "";
-  populateNoteList();
+  // populateNoteList();
 
-  var request = new XMLHttpRequest();
-  request.open('POST', 'http://localhost:1234/kenny', true);
-  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-  request.send(sendData);
+  postRequest(sendData)
+  getRequest()
+
 }
 
 function populateNoteList() {
   let notesList = document.getElementById("notes-list");
   notesList.innerHTML = "";
-  notebook.list().forEach( ( note ) => {
-    notesList.innerHTML += `<a href='#${note}' id='${note}'>${note}<br></a>`;
-  });
+  // notebook.list().forEach( ( note ) => {
+  //   notesList.innerHTML += `<a href='#${note}' id='${note}'>${note}<br></a>`;
+  // });
 }
 
 function showEntireNote() {

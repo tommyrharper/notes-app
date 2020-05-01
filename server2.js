@@ -1,6 +1,10 @@
 // A BASIC Node server
 // Routing Requests
 
+const Notebook = require('./src/notebook.js')
+
+let notebook = new Notebook()
+
 const http = require("http");
 const url = require("url");
 
@@ -19,7 +23,8 @@ const server = http.createServer(function(req, res) {
 
   req.on("data", function(chunk) {
     console.log("got some data");
-    console.log(chunk.toString());
+    console.log(chunk.toString())
+    notebook.addNote(chunk.toString())
     //if no data is passed we don't see this messagee
     //but we still need the handler so the "end" function works.
   });
@@ -51,10 +56,11 @@ server.listen(1234, function() {
 //data: the info about the request
 //callback: the function to call to send the response
 const routes = {
-  kenny: function(data, res) {
+  notes: function(data, res) {
     // this function called if the path is 'kenny'
     let payload = {
-      name: "Kenny"
+      fullList: notebook.notes,
+      shortList: notebook.list()
     };
     let payloadStr = JSON.stringify(payload);
     res.setHeader("Content-Type", "application/json");
