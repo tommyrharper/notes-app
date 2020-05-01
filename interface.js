@@ -14,8 +14,14 @@ function addNote(event) {
   event.preventDefault();
   const element = document.getElementById("add-note");
   notebook.addNote(element.value);
+  const sendData = element.value
   element.value = "";
   populateNoteList();
+
+  var request = new XMLHttpRequest();
+  request.open('POST', 'http://localhost:1234/kenny', true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  request.send(sendData);
 }
 
 function populateNoteList() {
