@@ -8,6 +8,6 @@ it('6 + 4 equals 10', function(){
 
 //test 2
 it('a matches a', function(){
-  expect("a").toEqual("a")
+  expect("a").toEqual("b")
 })
 

@@ -2,9 +2,9 @@
 function expect(testCase) {
 	var toEqual = function(comparison) {
 		if (testCase === comparison) {
-			printToHTML("Pass", "green")
+			printResult("Pass", "green")
 		} else {
-			printToHTML("Fail", "red")
+			printResult("Fail", "red")
 		}
 	}
 	return {
@@ -13,12 +13,22 @@ function expect(testCase) {
 }
 
 function it(name, test) {
-  printToHTML(name)
+  printLabel(name)
 	test()
-	printToHTML("<br>")
 }
 
-function printToHTML(text, colour) {
-  var testContainer = document.getElementById("tests")
-  testContainer.innerHTML +=  `<div style="color:${colour}">${text}</div>` 
+function printResult(result, colour) {
+	var testContainer = document.getElementById("tests")
+	var image;
+	if (result === "Pass") {
+		image = "slice-watermelon.png"
+	} else {
+		image = "broken-watermelon.png"
+	}
+	testContainer.innerHTML +=  `<div style="color:${colour};line-height:10px"><img src="${image}" style="width:30px"/>${result}</div>` 
+}
+
+function printLabel(label) {
+	var testContainer = document.getElementById("tests")
+	testContainer.innerHTML +=  `<div>${label}</div>` 
 }
