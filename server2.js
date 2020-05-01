@@ -23,6 +23,7 @@ const server = http.createServer(function(req, res) {
 
   req.on("data", function(chunk) {
     console.log("got some data");
+    console.log(chunk);
     console.log(chunk.toString())
     notebook.addNote(chunk.toString())
     //if no data is passed we don't see this messagee
@@ -57,7 +58,7 @@ server.listen(1234, function() {
 //callback: the function to call to send the response
 const routes = {
   notes: function(data, res) {
-    // this function called if the path is 'kenny'
+    // this function called if the path is 'notes'
     let payload = {
       fullList: notebook.notes,
       shortList: notebook.list()
