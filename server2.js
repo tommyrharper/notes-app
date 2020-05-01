@@ -69,32 +69,6 @@ const routes = {
     res.write(payloadStr);
     res.end("\n");
   },
-  cartman: function(data, res) {
-    // this function called if the path is 'cartman'
-    let payload = {
-      name: "Cartman"
-    };
-    let payloadStr = JSON.stringify(payload);
-    res.setHeader("Content-Type", "application/json");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.writeHead(200);
-    res.write(payloadStr);
-    res.end("\n");
-  },
-  "kenny/is/mysterion": function(data, res) {
-    //this function called if path is 'kenny/is/mysterion'
-    let payload = {
-      name: "Mysterion",
-      enemy: "The Coon",
-      today: +new Date()
-    };
-    let payloadStr = JSON.stringify(payload);
-    res.setHeader("Content-Type", "application/json");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.writeHead(200);
-    res.write(payloadStr);
-    res.end("\n");
-  },
   notFound: function(data, res) {
     //this one gets called if no route matches
     let payload = {
