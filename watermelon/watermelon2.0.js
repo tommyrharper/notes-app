@@ -2,9 +2,9 @@
 function expect(testCase) {
 	var toEqual = function(comparison) {
 		if (testCase === comparison) {
-			console.log("Pass")
+			printToHTML("Pass", "green")
 		} else {
-			console.log("Fail")
+			printToHTML("Fail", "red")
 		}
 	}
 	return {
@@ -13,6 +13,12 @@ function expect(testCase) {
 }
 
 function it(name, test) {
-  console.log(name)
-  test()
+  printToHTML(name)
+	test()
+	printToHTML("<br>")
+}
+
+function printToHTML(text, colour) {
+  var testContainer = document.getElementById("tests")
+  testContainer.innerHTML +=  `<div style="color:${colour}">${text}</div>` 
 }
